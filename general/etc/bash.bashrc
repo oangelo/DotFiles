@@ -97,3 +97,5 @@ unset use_color safe_term match_lhs
 
 [ -r /etc/bash_completion ] && . /etc/bash_completion -r /etc/bash.bashrc.local ] && . /etc/bash.bashrc.local
 export PATH="/usr/lib/colorgcc/bin:$PATH"
+export VISUAL=vim
+export EDITOR=vim
