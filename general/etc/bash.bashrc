@@ -96,6 +96,10 @@ PS4='+ '
 unset use_color safe_term match_lhs
 
 [ -r /etc/bash_completion ] && . /etc/bash_completion -r /etc/bash.bashrc.local ] && . /etc/bash.bashrc.local
+#color gcc
 export PATH="/usr/lib/colorgcc/bin:$PATH"
+#setting vim as the default editor
 export VISUAL=vim
 export EDITOR=vim
+#enabling git completion 
+source /usr/share/git/completion/git-completion.bash

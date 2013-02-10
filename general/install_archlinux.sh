@@ -4,6 +4,9 @@ sudo cp .vimrc ~
 #vim packages
 sudo pacman -S vim-colorsamplerpack vim-supertab vim-ultisnips vim-ultisnips 
 
+#git configuration
+cp .gitconfig ~
+
 #bash colors
 sudo cp etc/* /etc/
 
