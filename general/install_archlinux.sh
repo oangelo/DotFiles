@@ -11,4 +11,4 @@ cp .gitconfig ~
 sudo cp etc/* /etc/
 
 #ssh configurations
-cp -r .ssh ~/.ssh
+cp  .ssh/* ~/.ssh/
