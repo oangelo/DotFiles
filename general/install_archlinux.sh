@@ -2,8 +2,8 @@
 cp .vimrc ~
 sudo cp .vimrc ~
 #vim packages
-sudo pacman -S vim-colorsamplerpack vim-supertab vim-ultisnips vim-ultisnips colorgcc
-
+sudo pacman -Sy vim-colorsamplerpack vim-supertab vim-ultisnips vim-ultisnips colorgcc colordiff bash-completion pkgfile
+sudo pkgfile --update
 #git configuration
 cp .gitconfig ~
 

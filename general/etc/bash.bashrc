@@ -103,3 +103,73 @@ export VISUAL=vim
 export EDITOR=vim
 #enabling git completion 
 source /usr/share/git/completion/git-completion.bash
+#command not found hook 
+source /usr/share/doc/pkgfile/command-not-found.bash
+
+##################################################################################
+#                                   Aliases                                      #
+##################################################################################
+
+# modified commands
+alias diff='colordiff'              # requires colordiff package
+alias grep='grep --color=auto'
+alias more='less'
+alias df='df -h'
+alias du='du -c -h'
+alias mkdir='mkdir -p -v'
+alias nano='nano -w'
+alias ping='ping -c 5'
+alias ..='cd ..'
+
+# new commands
+alias da='date "+%A, %B %d, %Y [%T]"'
+alias du1='du --max-depth=1'
+alias hist='history | grep'      # requires an argument
+alias openports='netstat --all --numeric --programs --inet --inet6'
+alias pg='ps -Af | grep $1'         # requires an argument (note: /usr/bin/pg is installed by the util-linux package; maybe a different alias name should be used)
+
+# privileged access
+if [ $UID -ne 0 ]; then
+    alias sudo='sudo '
+    alias scat='sudo cat'
+    alias svim='sudo vim'
+    alias root='sudo su'
+    alias reboot='sudo reboot'
+    alias halt='sudo halt'
+    alias update='sudo pacman -Su'
+    alias netcfg='sudo netcfg2'
+fi
+
+# ls
+alias ls='ls -hF --color=auto'
+alias lr='ls -R'                    # recursive ls
+alias ll='ls -l'
+alias la='ll -A'
+alias lx='ll -BX'                   # sort by extension
+alias lz='ll -rS'                   # sort by size
+alias lt='ll -rt'                   # sort by date
+alias lm='la | more'
+
+# safety features
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -I'                    # 'rm -i' prompts for every file
+alias ln='ln -i'
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# pacman aliases (if necessary, replace 'pacman' with your favorite AUR helper and adapt the commands accordingly)
+alias pac="sudo /usr/bin/pacman -S"		# default action	- install one or more packages
+alias pacu="/usr/bin/pacman -Syu"		# '[u]pdate'		- upgrade all packages to their newest version
+alias pacr="sudo /usr/bin/pacman -Rs"		# '[r]emove'		- uninstall one or more packages
+alias pacs="/usr/bin/pacman -Ss"		# '[s]earch'		- search for a package using one or more keywords
+alias paci="/usr/bin/pacman -Si"		# '[i]nfo'		- show information about a package
+alias paclo="/usr/bin/pacman -Qdt"		# '[l]ist [o]rphans'	- list all packages which are orphaned
+alias pacc="sudo /usr/bin/pacman -Scc"		# '[c]lean cache'	- delete all not currently installed package files
+alias paclf="/usr/bin/pacman -Ql"		# '[l]ist [f]iles'	- list all files installed by a given package
+alias pacexpl="/usr/bin/pacman -D --asexp"	# 'mark as [expl]icit'	- mark one or more packages as explicitly installed 
+alias pacimpl="/usr/bin/pacman -D --asdep"	# 'mark as [impl]icit'	- mark one or more packages as non explicitly installed
+
+# '[r]emove [o]rphans' - recursively remove ALL orphaned packages
+alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
