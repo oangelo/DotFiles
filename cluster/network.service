@@ -1,0 +1,19 @@
+[Unit]
+Description=Network Connectivity
+Wants=network.target
+Before=network.target
+BindsTo=sys-subsystem-net-devices-eth0.device
+After=sys-subsystem-net-devices-eth0.device
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/sbin/ip link set dev eth0 up
+ExecStart=/sbin/dhcpcd eth0
+
+ExecStop=/sbin/dhcpcd -k eth0
+ExecStop=/sbin/ip addr flush dev eth0
+ExecStop=/sbin/ip link set dev eth0 down
+
+[Install]
+WantedBy=multi-user.target

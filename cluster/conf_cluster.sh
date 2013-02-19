@@ -1,4 +1,4 @@
-pacman -Sy  sudo gvim git ifplugd netcfg  nfs-utils yp-tools ypbind-mt openssh yaourt libxml2 dbus ntp
+pacman -Sy  sudo bc gvim git ifplugd netcfg  nfs-utils yp-tools ypbind-mt openssh yaourt libxml2 dbus ntp
 
 yaourt -S torque
 
@@ -30,8 +30,8 @@ systemctl enable torque-node.service
 
 #setting the network
 systemctl enable sshd.service
-systemctl enable net-auto-wired.service
-ln -s /etc/network.d/examples/ethernet-dhcp /etc/network.d/
+cp network.service /etc/systemd/system/ 
+systemctl enable network.service
 
 #Enabling ntp to set the clock right 
 systemctl enable ntpd 
