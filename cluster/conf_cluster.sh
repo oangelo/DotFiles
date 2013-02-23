@@ -32,6 +32,11 @@ systemctl enable torque-node.service
 systemctl enable sshd.service
 cp network.service /etc/systemd/system/ 
 systemctl enable network.service
+#uset other network services
+systemctl disable net-auto-wired 
+systemctl disable NetworkManager 
+#persistent network name
+ln -s /dev/null /etc/udev/rules.d/80-net-name-slot.rules
 
 #Enabling ntp to set the clock right 
 systemctl enable ntpd 
