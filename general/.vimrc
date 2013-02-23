@@ -149,3 +149,8 @@ let g:clang_use_library=1
  " SuperTab option for context aware completion
  let g:SuperTabDefaultCompletionType = "context"
 map :w:!latex % && clear
+"Correcting latex accent
+imap <buffer> <C-i> <Plug>Tex_InsertItemOnThisLine
+imap <C-b> <Plug>Tex_MathBF
+imap <C-c> <Plug>Tex_MathCal
+imap <C-l> <Plug>Tex_LeftRight
