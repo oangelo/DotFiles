@@ -23,6 +23,7 @@ echo "ypserver fiscomp" > /etc/yp.conf
 echo 'NISDOMAINNAME="fiscomp"' >  /etc/conf.d/nisdomainname
 cp nsswitch.conf /etc/nsswitch.conf
 systemctl enable ypbind.service
+systemctl enable rpcbind 
 
 #setting torque node
 echo "\$pbsserver      pinot  # note: this is the hostname of the headnode" > /var/spool/torque/mom_priv/config
