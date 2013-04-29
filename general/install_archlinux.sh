@@ -12,3 +12,4 @@ sudo cp etc/* /etc/
 
 #ssh configurations
 cp  .ssh/* ~/.ssh/
+mkdir -p ~/.ssh/connections
