@@ -20,10 +20,12 @@ cmd=$(grep -ci "$word" $file)
 
 #configuring nis
 echo "ypserver fiscomp" > /etc/yp.conf
-echo 'NISDOMAINNAME="fiscomp"' >  /etc/conf.d/nisdomainname
+echo 'NISDOMAINNAME="fiscomp"' >  /etc/nisdomainname
 cp nsswitch.conf /etc/nsswitch.conf
 systemctl enable ypbind.service
 systemctl enable rpcbind 
+#deprecated
+echo 'NISDOMAINNAME="fiscomp"' >  /etc/conf.d/nisdomainname
 
 #setting torque node
 echo "\$pbsserver      pinot  # note: this is the hostname of the headnode" > /var/spool/torque/mom_priv/config
