@@ -1,4 +1,4 @@
-pacman -Sy  sudo bc gvim git ifplugd netcfg  nfs-utils yp-tools ypbind-mt openssh yaourt libxml2 dbus ntp
+pacman -Sy  sudo bc gvim git ifplugd nfs-utils yp-tools ypbind-mt openssh yaourt libxml2 dbus ntp
 
 yaourt -S torque
 
@@ -11,6 +11,7 @@ if [ "$cmd" != "0" ]; then
 	echo "archlinufr already set"
 else
         echo "[archlinuxfr]" >> $file
+        echo "SigLevel = Never" >> $file
         echo "Server = http://repo.archlinux.fr/\$arch" >> $file
 fi
 
