@@ -1,4 +1,4 @@
-pacman -Sy  sudo bc gvim git ifplugd netcfg  nfs-utils yp-tools ypbind-mt openssh yaourt libxml2 dbus ntp
+pacman -Sy  sudo bc gvim git ifplugd nfs-utils yp-tools ypbind-mt openssh yaourt libxml2 dbus ntp
 
 yaourt -S torque
 
