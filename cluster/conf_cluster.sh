@@ -11,6 +11,7 @@ if [ "$cmd" != "0" ]; then
 	echo "archlinufr already set"
 else
         echo "[archlinuxfr]" >> $file
+        echo "SigLevel = Never" >> $file
         echo "Server = http://repo.archlinux.fr/\$arch" >> $file
 fi
 
