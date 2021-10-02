@@ -3,3 +3,11 @@
 	name = oangelo
 [push]
 	default = simple
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	grep = auto
+[core]
+	editor = nvim

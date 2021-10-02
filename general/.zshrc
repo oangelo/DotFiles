@@ -73,7 +73,7 @@ powerline-daemon -q
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails python node ruby postgres zsh-autosuggestions zsh-syntax-highlighting vi-mode)
+plugins=(sudo git rails python node ruby postgres k zsh-autosuggestions zsh-syntax-highlighting vi-mode)
 # to install plugins
 #git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 #git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
