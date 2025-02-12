@@ -58,6 +58,29 @@ set tabstop=2           " número de espaços que um tab representa
 set expandtab           " converte tabs em espaços
 set autoindent          " mantém a indentação da linha anterior
 set clipboard+=unnamedplus  " usar o clipboard do sistema (permite copiar e colar entre nvim e o SO)
+set cursorline
+
+" Exibir números de linha e números relativos (ajuda na navegação)
+set number
+
+" Ativar suporte ao mouse em todos os modos
+set mouse=a
+
+" Usar cores verdadeiras (se seu terminal suportar)
+set termguicolors
+
+" Mostrar sempre a coluna de sinais (útil para plugins de linting, git, etc.)
+set signcolumn=yes
+
+" Dividir janelas novas para a direita e abaixo (split behavior)
+set splitright
+set splitbelow
+
+" Busca: ignorecase (mas se usar maiúsculas, diferencia) e realce de resultados
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
 
 " Ativar o corretor ortográfico
 set spell
@@ -73,6 +96,18 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
         \ exe "normal! g'\"" | endif
 endif
+
+" Tempo de atualização (updatetime) menor para respostas mais rápidas (útil para plugins, por exemplo, o coc.nvim)
+set updatetime=300
+
+" Ativar undo persistente (salva histórico mesmo entre sessões)
+set undofile
+" Defina um diretório para o undo (garanta que o diretório exista)
+if !isdirectory(expand("~/.config/nvim/undo"))
+  call mkdir(expand("~/.config/nvim/undo"), "p")
+endif
+set undodir=~/.config/nvim/undo//
+
 
 " Mapeamento: K para mostrar documentação (usando o coc.nvim para outras linguagens)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
