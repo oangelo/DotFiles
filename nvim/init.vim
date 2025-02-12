@@ -59,6 +59,15 @@ set expandtab           " converte tabs em espaços
 set autoindent          " mantém a indentação da linha anterior
 set clipboard+=unnamedplus  " usar o clipboard do sistema (permite copiar e colar entre nvim e o SO)
 
+" Ativar o corretor ortográfico
+set spell
+
+" Definir as línguas para pt-br e en-us
+set spelllang=pt_br,en_us
+
+" (Opcional) Mapeamentos para navegar entre os erros de ortografia:
+" "]s" vai para o próximo erro e "[s" para o erro anterior (esses comandos já vêm por padrão)
+
 " Salta para a última posição editada ao reabrir um arquivo
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
