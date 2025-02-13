@@ -27,7 +27,7 @@ done
 
 # Realiza commit e push das alterações
 cd "$DOTFILES_DIR" || exit
-git add .
+git add .zshrc .p10k.zsh
 git commit -m "Backup das configurações do Zsh e Powerlevel10k - $(date)"
 git push origin main  # ou 'master', dependendo da branch principal
 
