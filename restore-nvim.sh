@@ -10,5 +10,8 @@ echo "Restaurando configurações do Neovim..."
 mkdir -p "$NVIM_CONFIG_DEST"
 rsync -av --delete "$DOTFILES_DIR/nvim/" "$NVIM_CONFIG_DEST/"
 
+# Instala o parser de HTML com nvim-treesitter, se ainda não estiver instalado
+nvim --headless +TSInstall\ html +qall
+
 echo "Configurações do Neovim restauradas com sucesso!"
 
