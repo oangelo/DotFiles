@@ -8,7 +8,7 @@ DOTFILES_REPO_URL="https://github.com/seu_usuario/DotFiles.git"  # Substitua com
 DOTFILES_DIR="$HOME/DotFiles"
 
 # Atualiza os repositórios e instala zsh e git (caso não estejam instalados)
-sudo pacman -Syu --noconfirm zsh git curl
+sudo pacman -Syu --noconfirm zsh git curl bat
 
 # Clona o repositório DotFiles, se ainda não existir
 if [ ! -d "$DOTFILES_DIR" ]; then
