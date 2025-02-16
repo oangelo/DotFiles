@@ -46,6 +46,7 @@ if glob(s:VIMROOT . "/bundle/") != ""
       Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
       Plug 'windwp/nvim-ts-autotag'
       Plug 'andymass/vim-matchup'
+      Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
     call plug#end()
   endif
 endif
@@ -145,6 +146,9 @@ EOF
 " para personalizar cores, por exemplo, você pode adicionar:
 let g:indentLine_setColors = 0
 highlight IndentLine guifg=#A4E57E ctermfg=239
+
+
+nnoremap <leader>p :Prettier<CR>
 
 " -------------------------------
 " Fim da Configuração
