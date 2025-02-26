@@ -1,5 +1,5 @@
 #vim packages
-sudo pacman -Sy stow ruby colordiff bash-completion pkgfile powerline powerline-fonts zsh xclip 
+sudo pacman -Sy stow ruby colordiff bash-completion pkgfile powerline powerline-fonts zsh xclip python-black python-flake8 npm nodejs
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
